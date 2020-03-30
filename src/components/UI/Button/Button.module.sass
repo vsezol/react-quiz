@@ -1,0 +1,31 @@
+.Button
+    display: inline-block
+    padding: 10px
+    border-radius: 5px
+    border: 2px solid #cccccc
+    color: #000000
+    margin-right: 15px
+    text-transform: uppercase
+    font-weight: bold
+    transition: background-color 0.3s
+    cursor: pointer
+    color: white
+    background-color: rgba(0, 0, 0, 0.0)
+    &:focus
+        outline: none    
+    &:disabled
+        background-color: #cccccc
+        color: #000000
+        cursor: not-allowed
+    &.error
+        border: 2px solid rgba(230, 18, 64, 0.5)
+        &:hover
+            background-color: rgba(230, 18, 64, 0.5)
+    &.success
+        border: 2px solid rgba(60, 230, 18, 0.5)
+        &:hover
+            background-color: rgba(60, 230, 18, 0.5)
+
+    &.primary
+        &:hover
+            background-color: rgba(18, 145, 230, 0.5)
