@@ -11,7 +11,7 @@ class Quiz extends Component {
 		answerState: null, // {id: success error}
 		quiz: [
 			{
-				question: 'Какой длины у тебя волосня на жопке?',
+				question: 'Какой длины у тебя хохоряшки?',
 				rightAnswerId: 4,
 				id: 1,
 				answers: [
@@ -22,7 +22,7 @@ class Quiz extends Component {
 				]
 			},
 			{
-				question: 'Какой ник самый оптимальный для игры minecraft?',
+				question: 'Выберете наилучший игровой ник',
 				rightAnswerId: 2,
 				id: 2,
 				answers: [
@@ -33,14 +33,70 @@ class Quiz extends Component {
 				]
 			},
 			{
-				question: 'Что было раньше, курица или яйка?',
+				question: 'Ты упал в яму. В яме пирожок и хуй. Что съешь, что в жопу засунешь?',
+				rightAnswerId: 2,
+				id: 3,
+				answers: [
+					{ text: 'Жопу пирожком закрою, а хуй в рот не стану брать', id: 1 },
+					{ text: 'Возьму пирожок и вылезу из ямы', id: 2 },
+					{ text: 'Из каждой ямы можно вылезти', id: 3 },
+					{ text: 'Конечно хуек в рот, а пирог в жопу', id: 4 }
+				]
+			},
+			{
+				question: 'Что было раньше, курица или vsezol?',
 				rightAnswerId: 3,
 				id: 3,
 				answers: [
 					{ text: 'курица', id: 1 },
 					{ text: '1.5 курицы', id: 2 },
 					{ text: 'vsezol', id: 3 },
-					{ text: '1.5 яйки', id: 4 }
+					{ text: 'яйцо', id: 4 }
+				]
+			},
+			{
+				question:
+					'Рядом два стула, на одном пики точеные, на другом хуи дроченые, куда сам сядешь, куда мать посадишь?',
+				rightAnswerId: 2,
+				id: 3,
+				answers: [
+					{ text: 'хуи - мать, пики - я', id: 1 },
+					{ text: 'блять', id: 2 },
+					{ text: 'хуи - я, пики - мать', id: 3 },
+					{ text: 'Возьму пики точеные, да срублю хуи дроченые', id: 4 }
+				]
+			},
+			{
+				question: 'Ведьмаку заплатите ... (продолжите фразу)',
+				rightAnswerId: 4,
+				id: 3,
+				answers: [
+					{ text: 'фальшивой монетой', id: 1 },
+					{ text: 'ничего', id: 2 },
+					{ text: 'чеканой копейкой', id: 3 },
+					{ text: 'three hundred bucks', id: 4 }
+				]
+			},
+			{
+				question: 'Minecraft, ЕГЭ, Программирование, Дроч (уберите лишнее слово)',
+				rightAnswerId: 1,
+				id: 3,
+				answers: [
+					{ text: 'ЕГЭ', id: 1 },
+					{ text: 'Дроч', id: 2 },
+					{ text: 'Программирование', id: 3 },
+					{ text: 'Minecraft', id: 4 }
+				]
+			},
+			{
+				question: 'Почему у человека грустное ебало?',
+				rightAnswerId: 3,
+				id: 3,
+				answers: [
+					{ text: 'Я че ебу?', id: 1 },
+					{ text: 'Потому что', id: 2 },
+					{ text: 'Хочет срать, но дальше курит', id: 3 },
+					{ text: 'Ударился членом об шкаф', id: 4 }
 				]
 			}
 		]
