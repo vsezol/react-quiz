@@ -6,7 +6,7 @@ import Drawer from '../../components/Navigation/Drawer/Drawer';
 class Layout extends Component {
 
 	state = {
-		menu: true
+		menu: false
 	}
 
 	toggleMenuHandler = () => {

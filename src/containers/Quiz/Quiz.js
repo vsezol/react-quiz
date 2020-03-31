@@ -46,7 +46,7 @@ class Quiz extends Component {
 			{
 				question: 'Что было раньше, курица или vsezol?',
 				rightAnswerId: 3,
-				id: 3,
+				id: 4,
 				answers: [
 					{ text: 'курица', id: 1 },
 					{ text: '1.5 курицы', id: 2 },
@@ -58,7 +58,7 @@ class Quiz extends Component {
 				question:
 					'Рядом два стула, на одном пики точеные, на другом хуи дроченые, куда сам сядешь, куда мать посадишь?',
 				rightAnswerId: 2,
-				id: 3,
+				id: 5,
 				answers: [
 					{ text: 'хуи - мать, пики - я', id: 1 },
 					{ text: 'блять', id: 2 },
@@ -69,7 +69,7 @@ class Quiz extends Component {
 			{
 				question: 'Ведьмаку заплатите ... (продолжите фразу)',
 				rightAnswerId: 4,
-				id: 3,
+				id: 6,
 				answers: [
 					{ text: 'фальшивой монетой', id: 1 },
 					{ text: 'ничего', id: 2 },
@@ -80,7 +80,7 @@ class Quiz extends Component {
 			{
 				question: 'Minecraft, ЕГЭ, Программирование, Дроч (уберите лишнее слово)',
 				rightAnswerId: 1,
-				id: 3,
+				id: 7,
 				answers: [
 					{ text: 'ЕГЭ', id: 1 },
 					{ text: 'Дроч', id: 2 },
@@ -91,7 +91,7 @@ class Quiz extends Component {
 			{
 				question: 'Почему у человека грустное ебало?',
 				rightAnswerId: 3,
-				id: 3,
+				id: 8,
 				answers: [
 					{ text: 'Я че ебу?', id: 1 },
 					{ text: 'Потому что', id: 2 },
@@ -116,7 +116,6 @@ class Quiz extends Component {
 		if (question.rightAnswerId === answerId) {
 			if (!results[question.id]) {
 				results[question.id] = 'success'
-				console.log(results)
 			}
 			this.setState({
 				answerState: { [answerId]: 'success' },
