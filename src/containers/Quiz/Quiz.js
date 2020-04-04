@@ -18,8 +18,8 @@ class Quiz extends Component {
 					{ text: '0 см', id: 1 },
 					{ text: 'до 1 см', id: 2 },
 					{ text: '1-5 см', id: 3 },
-					{ text: 'Я тян пруфiв не будет', id: 4 }
-				]
+					{ text: 'Я тян пруфiв не будет', id: 4 },
+				],
 			},
 			{
 				question: 'Выберете наилучший игровой ник',
@@ -29,19 +29,24 @@ class Quiz extends Component {
 					{ text: 'opa_chin_chopa', id: 1 },
 					{ text: 'popajopa', id: 2 },
 					{ text: 'zhmih', id: 3 },
-					{ text: 'pizdolaz', id: 4 }
-				]
+					{ text: 'pizdolaz', id: 4 },
+				],
 			},
 			{
-				question: 'Ты упал в яму. В яме пирожок и хуй. Что съешь, что в жопу засунешь?',
+				question:
+					'Ты упал в яму. В яме пирожок и хуй. Что съешь, что в жопу засунешь?',
 				rightAnswerId: 2,
 				id: 3,
 				answers: [
-					{ text: 'Жопу пирожком закрою, а хуй в рот не стану брать', id: 1 },
+					{
+						text:
+							'Жопу пирожком закрою, а хуй в рот не стану брать',
+						id: 1,
+					},
 					{ text: 'Возьму пирожок и вылезу из ямы', id: 2 },
 					{ text: 'Из каждой ямы можно вылезти', id: 3 },
-					{ text: 'Конечно хуек в рот, а пирог в жопу', id: 4 }
-				]
+					{ text: 'Конечно хуек в рот, а пирог в жопу', id: 4 },
+				],
 			},
 			{
 				question: 'Что было раньше, курица или vsezol?',
@@ -51,8 +56,8 @@ class Quiz extends Component {
 					{ text: 'курица', id: 1 },
 					{ text: '1.5 курицы', id: 2 },
 					{ text: 'vsezol', id: 3 },
-					{ text: 'яйцо', id: 4 }
-				]
+					{ text: 'яйцо', id: 4 },
+				],
 			},
 			{
 				question:
@@ -63,8 +68,11 @@ class Quiz extends Component {
 					{ text: 'хуи - мать, пики - я', id: 1 },
 					{ text: 'блять', id: 2 },
 					{ text: 'хуи - я, пики - мать', id: 3 },
-					{ text: 'Возьму пики точеные, да срублю хуи дроченые', id: 4 }
-				]
+					{
+						text: 'Возьму пики точеные, да срублю хуи дроченые',
+						id: 4,
+					},
+				],
 			},
 			{
 				question: 'Ведьмаку заплатите ... (продолжите фразу)',
@@ -74,19 +82,20 @@ class Quiz extends Component {
 					{ text: 'фальшивой монетой', id: 1 },
 					{ text: 'ничего', id: 2 },
 					{ text: 'чеканой копейкой', id: 3 },
-					{ text: 'three hundred bucks', id: 4 }
-				]
+					{ text: 'three hundred bucks', id: 4 },
+				],
 			},
 			{
-				question: 'Minecraft, ЕГЭ, Программирование, Дроч (уберите лишнее слово)',
+				question:
+					'Minecraft, ЕГЭ, Программирование, Дроч (уберите лишнее слово)',
 				rightAnswerId: 1,
 				id: 7,
 				answers: [
 					{ text: 'ЕГЭ', id: 1 },
 					{ text: 'Дроч', id: 2 },
 					{ text: 'Программирование', id: 3 },
-					{ text: 'Minecraft', id: 4 }
-				]
+					{ text: 'Minecraft', id: 4 },
+				],
 			},
 			{
 				question: 'Почему у человека грустное ебало?',
@@ -96,13 +105,13 @@ class Quiz extends Component {
 					{ text: 'Я че ебу?', id: 1 },
 					{ text: 'Потому что', id: 2 },
 					{ text: 'Хочет срать, но дальше курит', id: 3 },
-					{ text: 'Ударился членом об шкаф', id: 4 }
-				]
-			}
-		]
+					{ text: 'Ударился членом об шкаф', id: 4 },
+				],
+			},
+		],
 	}
 
-	onAnswerClickHandler = answerId => {
+	onAnswerClickHandler = (answerId) => {
 		if (this.state.answerState) {
 			const key = Object.keys(this.state.answerState)[0]
 			if (this.state.answerState[key] === 'success') {
@@ -119,28 +128,28 @@ class Quiz extends Component {
 			}
 			this.setState({
 				answerState: { [answerId]: 'success' },
-				results
+				results,
 			})
-			const timeout = setTimeout(() => {
-				if (this.isQuizFinished()) {
-					this.setState({
-						isFinished: true
-					})
-				} else {
-					this.setState({
-						activeQuestion: this.state.activeQuestion + 1,
-						answerState: null
-					})
-				}
-				clearTimeout(timeout)
-			}, 1000)
 		} else {
 			results[question.id] = 'error'
 			this.setState({
 				answerState: { [answerId]: 'error' },
-				results
+				results,
 			})
 		}
+		const timeout = setTimeout(() => {
+			if (this.isQuizFinished()) {
+				this.setState({
+					isFinished: true,
+				})
+			} else {
+				this.setState({
+					activeQuestion: this.state.activeQuestion + 1,
+					answerState: null,
+				})
+			}
+			clearTimeout(timeout)
+		}, 1000)
 	}
 
 	isQuizFinished = () => {
@@ -152,9 +161,14 @@ class Quiz extends Component {
 			activeQuestion: 0,
 			isFinished: 0,
 			answerState: null,
-			results: {}
+			results: {},
 		})
 	}
+
+	componentDidMount() {
+		console.log(`Quiz id = ${this.props.match.params.id}`)
+	}
+	
 
 	render() {
 		return (
