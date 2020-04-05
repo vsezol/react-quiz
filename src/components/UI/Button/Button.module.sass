@@ -7,15 +7,18 @@
     margin-right: 15px
     text-transform: uppercase
     font-weight: bold
-    transition: background-color 0.3s
+    transition: background-color 0.3s ease-in-out
     cursor: pointer
     color: white
     background-color: rgba(0, 0, 0, 0.0)
     &:focus
         outline: none    
     &:disabled
-        background-color: #cccccc
-        color: #000000
+        opacity: 0.7
+        // border: 2px solid rgba(0, 0, 0, 1)!important
+        // color: black
+        // &:hover
+        //     background-color: rgba(0, 0, 0, 0.0)!important
         cursor: not-allowed
     &.error
         border: 2px solid rgba(230, 18, 64, 0.5)

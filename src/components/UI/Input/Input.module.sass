@@ -1,0 +1,30 @@
+.Input
+    flex-grow: 1
+    label
+        margin-bottom: 3px
+        padding: 0
+        display: block
+        font-weight: bold
+        color: white
+    input
+        width: 100%
+        display: block
+        box-sizing: border-box
+        border: solid 2px rgba(0, 0, 0, 0.0)
+        background-color: rgba(0, 0, 0, 0.3)
+        padding: 7px
+        font-size: 1.05rem
+        border-radius: 5px
+        // margin: 5px
+        color: white
+        transition: all 0.3s ease-in-out
+        &:focus, &:active
+            border: 2px solid white
+            outline: none
+    span 
+        margin-left: 5px
+        color: #E10700
+        font-size: 12px
+        font-weight: bold
+    &.invalid label 
+        color: #E10700
