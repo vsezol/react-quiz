@@ -110,12 +110,6 @@ class Auth extends Component {
 					>
 						<div>
 							{this.renderInputs()}
-							{/* <Input type="text" label="Email" />
-							<Input
-								type="password"
-								label="Password"
-								errorMessage="Test"
-							/> */}
 						</div>
 						<div className={classes.buttonDiv}>
 							<Button type="success" onClick={this.loginHandler} disabled={!this.state.isFormValid}>
