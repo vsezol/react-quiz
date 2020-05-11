@@ -19,7 +19,6 @@ import {
 export function fetchQuizes() {
   // промежуточный обработчик перехватывает посылку
   return async dispatch => {
-    console.log(dispatch)
     // вызываем создатель события старта получения тестов
     dispatch(fetchQuizesStart())
     try {
