@@ -4,33 +4,21 @@ import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz'
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz'
 import Loader from '../../components/UI/Loader/Loader'
 import { connect } from 'react-redux'
-import { fetchQuizById } from '../../store/actions/quiz'
+import { fetchQuizById, quizAnswerClick, retryQuiz } from '../../store/actions/quiz'
 
 class Quiz extends Component {
-  onAnswerClickHandler = answerId => {
-    
-  }
-
-  isQuizFinished = () => {
-    return this.state.activeQuestion + 1 === this.state.quiz.length
-  }
-
-  retryHandler = () => {
-    this.setState({
-      activeQuestion: 0,
-      isFinished: 0,
-      answerState: null,
-      results: {}
-    })
-  }
-
   componentDidMount() {
-    console.log(this.props.match.params.id)
+    // получаем id из url и фетчим тест по этому id
     this.props.fetchQuizById(this.props.match.params.id)
   }
 
+  // отчищаем state перед уничтожением компонента
+  componentWillUnmount() {
+    this.props.retryQuiz()
+  }
+  
+
   render() {
-    console.log(this.props)
     return (
       <div className={classes.Quiz}>
         <div className={classes.QuizWrapper}>
@@ -41,13 +29,13 @@ class Quiz extends Component {
             <FinishedQuiz
               results={this.props.results}
               quiz={this.props.quiz}
-              onRetry={this.retryHandler}
+              onRetry={this.props.retryQuiz}
             />
           ) : (
             <ActiveQuiz
               question={this.props.quiz[this.props.activeQuestion].question}
               answers={this.props.quiz[this.props.activeQuestion].answers}
-              onAnswerClick={this.onAnswerClickHandler}
+              onAnswerClick={this.props.quizAnswerClick}
               quizLength={this.props.quiz.length}
               questionNumber={this.props.activeQuestion + 1}
               answerState={this.props.answerState}
@@ -59,6 +47,7 @@ class Quiz extends Component {
   }
 }
 
+// state в props
 const mapStateToProps = state => {
   return {
     results: state.quiz.results,
@@ -70,10 +59,13 @@ const mapStateToProps = state => {
   }
 }
 
+// dispatch to props
 const mapDispatchToProps = dispatch => {
   return {
+    // ф для получения теста по id
     fetchQuizById: id => dispatch(fetchQuizById(id)),
-    quizAnswerClick: answerId => dispatch(quizAnswerClick(answerId))
+    quizAnswerClick: answerId => dispatch(quizAnswerClick(answerId)),
+    retryQuiz: () => dispatch(retryQuiz())
   }
 }
 
