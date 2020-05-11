@@ -1,3 +1,5 @@
+// в этом файле все редюсеры, которые связаны с тестом quiz
+
 import {
 	FETCH_QUIZES_START,
 	FETCH_QUIZES_SUCCESS,
@@ -7,6 +9,7 @@ import {
 	FINISH_QUIZ
 } from '../actions/actionTypes'
 
+// начальное состояние
 const initialState = {
 	quizes: [],
 	loading: false,
@@ -18,12 +21,18 @@ const initialState = {
 	quiz: null
 }
 
+// экспортируем quizReducer
+// редюсер принимает предыдущее состояние (по дефолту это начальное состояние) и событие
 export default (state = initialState, action) => {
+	// используем switch для обработки событий
 	switch (action.type) {
+		// после старта получения запросов меняем поле загрузки на true
 		case FETCH_QUIZES_START:
 			return { ...state, loading: true }
+		// в случае успеха = загрузка false и добавляются quizes(тесты)
 		case FETCH_QUIZES_SUCCESS:
 			return { ...state, loading: false, quizes: action.quizes }
+		// в случае ошибки = загрузка false и добавляем ошибку
 		case FETCH_QUIZES_ERROR:
 			return { ...state, loading: false, error: action.error }
 		case FETCH_QUIZ_SUCCESS:
@@ -32,6 +41,7 @@ export default (state = initialState, action) => {
 			return {...state, answerState: action.answerState, results: action.results}
 		case FINISH_QUIZ:
 			return {...state, isFinished: true}
+		// по дефолту должен возвращать состояние
 		default:
 			return state
 	}

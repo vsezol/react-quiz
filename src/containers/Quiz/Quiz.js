@@ -77,4 +77,5 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+// подключаем редакс к компоненту
 export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
