@@ -25,7 +25,7 @@ const initialState = {
 
 // экспортируем quizReducer
 // редюсер принимает предыдущее состояние (по дефолту это начальное состояние) и событие
-export default (state = initialState, action) => {
+export default function quizReducer(state = initialState, action) {
   // используем switch для обработки событий
   switch (action.type) {
     // после старта получения запросов меняем поле загрузки на true

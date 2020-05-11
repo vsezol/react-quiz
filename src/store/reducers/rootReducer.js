@@ -2,8 +2,10 @@
 import { combineReducers } from 'redux'
 // подключаем редюсер, который отвечает за тест quiz
 import quizReducer from './quiz'
+import createReducer from './create'
 
 // по дефолту экспортируем главный редюсер
 export default combineReducers({
-    quiz: quizReducer
+  quiz: quizReducer,
+  create: createReducer
 })

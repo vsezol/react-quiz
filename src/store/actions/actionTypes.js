@@ -15,3 +15,7 @@ export const FINISH_QUIZ = 'FINISH_QUIZ'
 export const QUIZ_NEXT_QUESTION = 'QUIZ_NEXT_QUESTION'
 // попробовать пройти тест заново
 export const QUIZ_RETRY = 'QUIZ_RETRY'
+
+export const CREATE_QUIZ_QUESTION = 'CREATE_QUIZ_QUESTION'
+
+export const RESET_QUIZ_CREATION = 'RESET_QUIZ_CREATION'
