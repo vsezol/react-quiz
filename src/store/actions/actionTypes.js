@@ -16,6 +16,11 @@ export const QUIZ_NEXT_QUESTION = 'QUIZ_NEXT_QUESTION'
 // попробовать пройти тест заново
 export const QUIZ_RETRY = 'QUIZ_RETRY'
 
+// для quiz creator
 export const CREATE_QUIZ_QUESTION = 'CREATE_QUIZ_QUESTION'
 
 export const RESET_QUIZ_CREATION = 'RESET_QUIZ_CREATION'
+
+// для авторизации 
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+export const AUTH_LOGOUT = 'AUTH_LOGOUT'
