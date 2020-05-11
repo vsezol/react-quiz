@@ -17,7 +17,6 @@ class Quiz extends Component {
     this.props.retryQuiz()
   }
   
-
   render() {
     return (
       <div className={classes.Quiz}>
